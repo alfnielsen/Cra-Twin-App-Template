@@ -4,7 +4,6 @@ export interface IRoute {
   name: string
   path: string
   getPath: (...arg: string[]) => string
-  end: boolean // exact [don't ally paths after this route]
   element: React.ReactElement
 }
 
@@ -17,7 +16,6 @@ export const routes: { [pageName in PageName]: IRoute } = {
     name: PageName.Home,
     path: "/",
     getPath: (...args: string[]) => `/${args.join("/")}`,
-    end: true,
     element: <Home />,
   },
 }
